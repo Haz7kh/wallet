@@ -18,8 +18,16 @@ body {
 
 .wallet {
   display: flex;
-  justify-content: center;
-  padding: 2rem 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Makes sure the container takes up the full height of the viewport */
+  justify-content: center; /* Centers the content vertically */
+  padding-top: 3rem; /* Add padding at the top for the title */
+}
+
+.wallet h2 {
+  margin-bottom: 1rem; /* Adds some space between the title and the card */
+  color: black;
 }
 
 .card-item {
