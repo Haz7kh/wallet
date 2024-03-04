@@ -12,9 +12,9 @@ export default function AddCard() {
   };
 
   const [type, setType] = useState("bitcoin");
-  const [cardNumber, setCardNumber] = useState("XXXX XXXX XXXX XXXX");
-  const [name, setName] = useState("FIRSTNAME LASTNAME");
-  const [thru, setThru] = useState("MM/YY");
+  const [cardNumber, setCardNumber] = useState("");
+  const [name, setName] = useState("");
+  const [thru, setThru] = useState("");
 
   const cardTypeHandler = (event) => {
     setType(event.target.value);
@@ -78,16 +78,27 @@ export default function AddCard() {
                 value={cardNumber}
                 onChange={cardNumberHandler}
                 maxLength={19}
+                placeholder="XXXX XXXX XXXX XXXX"
               />
             </div>
             <div>
-              <label htmlFor="type">PalceHolder Name:</label>
-              <input type="text" value={name} onChange={cardNameHandler} />
+              <label htmlFor="type">Card Holder Name:</label>
+              <input
+                type="text"
+                value={name}
+                onChange={cardNameHandler}
+                placeholder="FIRSTNAME LASTNAME"
+              />
             </div>
             <div className="cvv-content">
               <div>
                 <label htmlFor="type">Valid THRU:</label>
-                <input type="text" value={thru} onChange={cardThruHandler} />
+                <input
+                  type="text"
+                  value={thru}
+                  onChange={cardThruHandler}
+                  placeholder="MM/YY"
+                />
               </div>
               <div>
                 <label htmlFor="type">CVV:</label>
@@ -104,10 +115,10 @@ export default function AddCard() {
             </div>
           </form>
           <button className="black-btn">Add Card</button>
-          <Link to={"/"}>
-            <span className="back">Back</span>
-          </Link>
         </div>
+        <button className="black-btn">
+          <Link to={"/"}>Back</Link>
+        </button>
       </div>
     </div>
   );
